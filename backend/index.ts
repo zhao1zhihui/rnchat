@@ -9,5 +9,6 @@ import { connectDB } from './src/config/database.ts';
   });
 }).catch((error) => {
   console.error('Database connection error:', error);
+  process.exit(1); // Exit the process with failure
 });
 
