@@ -15,7 +15,7 @@ export async function getMe(req: authRequest, res: Response, next: NextFunction 
        
     } catch (error) {
         res.status(500)
-        next();
+        next(error);
     }
 }
 
@@ -40,6 +40,6 @@ export async function authCallback(req: Request, res: Response, next: NextFuncti
 
     } catch (error) {
         res.status(500).json({ message: "Server error" });
-        next();
+        next(error);
     }
 }
